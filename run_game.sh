@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Run a Halite game
 #
@@ -12,7 +12,7 @@ if [ "$1" == "" ]; then
 elif [ "$1" == "0" ]; then
     SEED=""    
 else 
-    SEED=" -s $1"
+    SEED="-s $1"
 fi
 
 #./halite -s 1621542274 -d "240 160" "php MyBot.php" "php MyBot.php"
