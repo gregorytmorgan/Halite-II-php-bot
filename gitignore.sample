@@ -1,0 +1,15 @@
+# sample .gitignore
+
+hlt_client/
+
+logs/
+
+.gitignore
+
+submission.zip
+
+*.hlt
+
+
+
+
