@@ -77,7 +77,32 @@ class Planet extends Entity
 
     public function isDockable(Player $player): bool
     {
-        return !$this->isFull() && (!$this->isOwned() || ($this->getOwner() === $player));
+        (!$this->isOwned() || ($this->getOwner() === $player));
+
+        if ($this->isFull())
+        {
+             Logger::log("Planet.IsDockable: full");
+             return false;
+        }
+
+        if ($this->isOwned())
+        {
+            if ($this->getOwner() !== $player)
+            {
+                Logger::log("Planet.IsDockable: enemy owned.");
+                return false;
+            }
+            else
+            {
+                Logger::log("Planet.IsDockable: owned.");
+            }
+        }
+        else
+        {
+            Logger::log("Planet.IsDockable: not owned.");
+        }
+
+        return true;
     }
 
     public function isFull(): bool

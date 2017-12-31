@@ -44,7 +44,8 @@ class Game
         $playerId = (int) $this->connection->read();
         Logger::init($playerId, $this->botName);
 
-        Logger::log('PHP-Version: '.PHP_VERSION);
+        Logger::log('Timestamp: ' . date(DATE_ATOM));
+        Logger::log('PHP-Version: ' . PHP_VERSION);
         Logger::log('Initialize new Game for Bot '.$this->botName.' -> Player Id '.$playerId.' received');
 
         $mapSize = $this->connection->read();
